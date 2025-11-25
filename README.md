@@ -5,6 +5,8 @@
 ![#1 Most Hardcore Local Model 2025](https://img.shields.io/badge/1st%20Place-Most%20Hardcore%20Local%20Model%202025-ff33aa?style=for-the-badge&logo=fire)
 ![100% Local](https://img.shields.io/badge/100%25-Local%20Only-2d2d2d?style=for-the-badge&logo=harddrive) 
 ![Runs on 16 GB](https://img.shields.io/badge/RAM-16GB%20Warrior-ff33aa?style=for-the-badge&logo=python)
+
+
 [![PyPI version](https://img.shields.io/pypi/v/sherin?color=success&style=flat-square)](https://pypi.org/project/sherin/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/) 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
