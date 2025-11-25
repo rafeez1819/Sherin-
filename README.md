@@ -1,4 +1,4 @@
-# 🤖 Sherin
+#  *Sherin* logo.png
 
 **Self-Evolving Multi-Bot Mesh Architecture**
 
@@ -17,7 +17,7 @@
 
 *Bots that coordinate through flag files. Systems that upgrade themselves.*
 
-[Quick start](#quick-start) • [Sherin AI](https://sherin.tech/) • [Docker](https://hub.docker.com/repository/docker/rafeez1819/sherin_ai/general) • [Discord](https://discord.gg/Zp8D4GNY)
+[Quick start](https://github.com/rafeez1819/SHERIN_AI-OS-FS/blob/main/README.md) • [Sherin AI](https://sherin.tech/) • [Docker](https://hub.docker.com/repository/docker/rafeez1819/sherin_ai/general) • [Discord](https://discord.gg/Zp8D4GNY)
 
 </div>
 
