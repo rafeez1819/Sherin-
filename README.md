@@ -17,7 +17,7 @@
 
 *Bots that coordinate through flag files. Systems that upgrade themselves.*
 
-[Sherin AI](https://sherin.tech) [Quick start](https://github.com/rafeez1819/SHERIN_AI-OS-FS/blob/main/README.md) •  [Docker](https://hub.docker.com/repository/docker/rafeez1819/sherin_ai/general) • [Discord](https://discord.gg/Zp8D4GNY)
+[Sherin AI](https://sherin.tech)   •   [Quick start](https://github.com/rafeez1819/SHERIN_AI-OS-FS/blob/main/README.md)     •     [Docker](https://hub.docker.com/repository/docker/rafeez1819/sherin_ai/general)      •       [Discord](https://discord.gg/Zp8D4GNY)
 
 </div>
 
