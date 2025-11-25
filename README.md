@@ -1,4 +1,4 @@
-#  *Sherin* logo.png
+#  *Sherin* 
 
 **Self-Evolving Multi-Bot Mesh Architecture**
 
