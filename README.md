@@ -92,12 +92,12 @@ text┌────────────────────────�
                                             │
                                    ┌────────▼─────────┐
                                    │   MeshFinance    │   ← optional graph.json
-                                   └───────┬───┬───┬───┘
-                                           │   │   │
-   ┌───────────────────────┐   ┌─────▼─┐   │   │
-   │   Forecast Bot        │   │ Risk  │   │   │
-   │   (creates base)      │   │ Bot   │   │   │
-   └───────┬───────────────┘   └───┬───┘   │   │
+                                   └───────┬───┬──┬───┘
+                                           │   │  │
+   ┌───────────────────────┐   ┌─────▼─┐   │   │  | 
+   │   Forecast Bot        │   │ Risk  │   │   │  |
+   │   (creates base)      │   │ Bot   │   │   │ _|
+   └───────┬───────────────┘   └───┬───┘   │   │        
            │                       │       │   │
            └─────►─────────────────┘       │   │
                                            │   │
@@ -115,7 +115,10 @@ text┌────────────────────────�
                                    │ audit_log.json│
                                    └───────────────┘
 Key components → Architecture Deep Dive
+
+
 Real-world Production Use-case (Finance Forecast)
+
 Pythonfrom sherin import Hub, Mesh
 from sherin.bots import ForecastBot, RiskAdjustBot, TaxCalcBot, SafetyBot
 
@@ -136,267 +139,88 @@ except TimeoutError:
 print(f"Net cash: ${result['net_cash']:.2f}M")
 # → Net cash: $91.78M
 Production stats (last 6 months)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-MetricValueForecast volume>$12 M processedBots in mesh6Avg latency8.7 msUptime99.7 %Self-upgrades12 (new bots added automatically)Manual interventions0
+Metric,                         Value
+Forecast volume,                >$12 M processed
+Bots in mesh,                    6
+Avg latency,                     8.7 ms
+Uptime,                          99.7 %
+Self-upgrades,                   12 (new bots added automatically)
+Manual interventions,            0
 Full finance example →
+
+
 Performance
 Benchmarks run on Intel i7-11700K, 32 GB RAM, NVMe SSD (Python 3.11).
 
+Configuration,       Bots,             Avg latency,        p95,               p99
+Simple pipeline,      3,                 2.3 ms,          3.1 ms,            4.2 ms
+Finance mesh,         6,                 8.7 ms,          12.4 ms,           15.8 ms
+Parallel mesh,        15,                 47 ms,          68 ms,              89 ms
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ConfigurationBotsAvg latencyp95p99Simple pipeline32.3 ms3.1 ms4.2 msFinance mesh68.7 ms12.4 ms15.8 msParallel mesh1547 ms68 ms89 ms
 Throughput
+Pipeline                              Requests / s
+Simple                                  435
+Finance mesh                            115
+Parallel mesh                           21 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-PipelineRequests / sSimple435Finance mesh115Parallel mesh21
 Memory usage
+SystemPeak                              RAM
+Base interpreter                       15 MB
+Per bot (average)                    ≈ 1.2 MB
+6-bot mesh                             22 MB
+45-bot full system                   ≈ 68 MB
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SystemPeak RAMBase interpreter15 MBPer bot (average)≈ 1.2 MB6-bot mesh22 MB45-bot full system≈ 68 MB
 Overhead vs. raw Python functions
 
+Benchmark               Raw Python avg                 Sherin avg             Overhead
+3-bot pipeline             1.8 ms                        2.3 ms              +0.5 ms (28 %)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-BenchmarkRaw Python avgSherin avgOverhead3-bot pipeline1.8 ms2.3 ms+0.5 ms (28 %)
 What you gain for ~0.5 ms: automatic coordination, audit trail, fallback handling, and self-evolution.
 Run the benchmark yourself →
-Sherin vs. Airflow (same 6-task pipeline)
+
+Metric                Airflow                     Sherin                 Winner
+Avg latency            340 ms                     8.7 ms              🏆 Sherin (×39 faster)
+Memory                 280 MB                      22 MB              🏆 Sherin (×12.7 smaller)
+Setup time             15 min                      30 s               🏆 Sherin
+Dynamic tasks            ❌                        ✅                🏆 Sherin
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-MetricAirflowSherinWinnerAvg latency340 ms8.7 ms🏆 Sherin (×39 faster)Memory280 MB22 MB🏆 Sherin (×12.7 smaller)Setup time15 min30 s🏆 SherinDynamic tasks❌✅🏆 Sherin
-Full benchmark code →
 Comparison with other orchestrators
+]Feature                   Airflow                 Temporal                   LangChain               Sherin
+Dynamic task addition       ❌                      ⚠️                          ⚠️                    ✅
+Shared mutable state        ❌                      ⚠️                          ❌                    ✅
+Self-evolution              ❌                      ❌                          ❌                    ✅
+Zero-config coordination    ❌                      ❌                          ⚠️                    ✅
+Local execution             ⚠️                      ⚠️                          ✅                    ✅
+Windows native support      ⚠️                      ✅                          ✅                    ✅
+Designed for                ETL                   Workflows                   LLM apps             Autonomous agents
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-FeatureAirflowTemporalLangChainSherinDynamic task addition❌⚠️⚠️✅Shared mutable state❌⚠️❌✅Self-evolution❌❌❌✅Zero-config coordination❌❌⚠️✅Local execution⚠️⚠️✅✅Windows native support⚠️✅✅✅Designed forETLWorkflowsLLM appsAutonomous agents
 When to choose Sherin
 • You need bots that can create other bots on the fly.
 • Your system relies on a shared mutable knowledge base.
 • You prefer local, zero-infrastructure execution (especially on Windows).
-  When not to choose Sherin
+   When not to choose Sherin
 • Pure, static ETL → Airflow/Prefect
 • Massive distributed workloads → Temporal
 • Single LLM app → LangChain
-  Installation
-  Bashpip install sherin
-  Bash# From source
-  git clone https://github.com/YOUR_GITHUB_USERNAME/sherin.git
-  cd sherin
-  pip install -e .
-  Documentation
+
+Installation
+Bashpip install sherin
+Bash# From source
+git clone https://github.com/YOUR_GITHUB_USERNAME/sherin.git
+cd sherin
+pip install -e .
+Documentation
 📚 https://sherin.readthedocs.io
-  Quick links: Quick start • Architecture • Adding bots
-  Examples
+Quick links: Quick start • Architecture • Adding bots
+Examples
 
 01_hello_world.py – 10-line demo
 02_simple_finance.py – production finance mesh
