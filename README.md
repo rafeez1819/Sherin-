@@ -9,7 +9,7 @@
 
 *Bots that coordinate through flag files. Systems that upgrade themselves.*
 
-[Quick start](#quick-start) • [Examples](examples/) • [Documentation](https://sherin.readthedocs.io) • [Discord](https://discord.gg/sherin-community)
+[Quick start](#quick-start) • [url](https://sherin.tech/) • [Docker]([https://sherin.readthedocs.io](https://hub.docker.com/repository/docker/rafeez1819/sherin_ai/general)) • [Discord]((https://discord.gg/Zp8D4GNY))
 
 </div>
 
@@ -114,11 +114,16 @@ text┌────────────────────────�
                                    │ base.json &   │
                                    │ audit_log.json│
                                    └───────────────┘
+
+
+
+
+
+
 Key components → Architecture Deep Dive
 
 
-Real-world Production Use-case (Finance Forecast)
-
+*Real-world Production Use-case (Finance Forecast) * 
 Pythonfrom sherin import Hub, Mesh
 from sherin.bots import ForecastBot, RiskAdjustBot, TaxCalcBot, SafetyBot
 
@@ -138,7 +143,11 @@ except TimeoutError:
 
 print(f"Net cash: ${result['net_cash']:.2f}M")
 # → Net cash: $91.78M
-Production stats (last 6 months)
+
+
+
+
+**Production stats (last 6 months) **
 Metric,                         Value
 Forecast volume,                >$12 M processed
 Bots in mesh,                    6
@@ -149,7 +158,7 @@ Manual interventions,            0
 Full finance example →
 
 
-Performance
+**Performance**
 Benchmarks run on Intel i7-11700K, 32 GB RAM, NVMe SSD (Python 3.11).
 
 Configuration,       Bots,             Avg latency,        p95,               p99
@@ -158,14 +167,14 @@ Finance mesh,         6,                 8.7 ms,          12.4 ms,           15.
 Parallel mesh,        15,                 47 ms,          68 ms,              89 ms
 
 
-Throughput
+**Throughput**
 Pipeline                              Requests / s
 Simple                                  435
 Finance mesh                            115
 Parallel mesh                           21 
 
 
-Memory usage
+**Memory usage**
 SystemPeak                              RAM
 Base interpreter                       15 MB
 Per bot (average)                    ≈ 1.2 MB
@@ -174,7 +183,7 @@ Per bot (average)                    ≈ 1.2 MB
 
 
 
-Overhead vs. raw Python functions
+**Overhead vs. raw Python functions**
 
 Benchmark               Raw Python avg                 Sherin avg             Overhead
 3-bot pipeline             1.8 ms                        2.3 ms              +0.5 ms (28 %)
@@ -184,6 +193,8 @@ Benchmark               Raw Python avg                 Sherin avg             Ov
 What you gain for ~0.5 ms: automatic coordination, audit trail, fallback handling, and self-evolution.
 Run the benchmark yourself →
 
+
+**Sherin vs. Airflow**
 Metric                Airflow                     Sherin                 Winner
 Avg latency            340 ms                     8.7 ms              🏆 Sherin (×39 faster)
 Memory                 280 MB                      22 MB              🏆 Sherin (×12.7 smaller)
@@ -191,7 +202,7 @@ Setup time             15 min                      30 s               🏆 Sheri
 Dynamic tasks            ❌                        ✅                🏆 Sherin
 
 
-Comparison with other orchestrators
+**Comparison with other orchestrators**
 ]Feature                   Airflow                 Temporal                   LangChain               Sherin
 Dynamic task addition       ❌                      ⚠️                          ⚠️                    ✅
 Shared mutable state        ❌                      ⚠️                          ❌                    ✅
@@ -211,24 +222,37 @@ When to choose Sherin
 • Massive distributed workloads → Temporal
 • Single LLM app → LangChain
 
+
 Installation
+
 Bashpip install sherin
+
 Bash# From source
 git clone https://github.com/YOUR_GITHUB_USERNAME/sherin.git
 cd sherin
 pip install -e .
+
+
 Documentation
 📚 https://sherin.readthedocs.io
 Quick links: Quick start • Architecture • Adding bots
-Examples
 
+
+
+Examples
 01_hello_world.py – 10-line demo
 02_simple_finance.py – production finance mesh
 04_self_upgrade.py – bot spawns new bots at runtime
 …and more in /examples
 
+
+
 Contributing
 See CONTRIBUTING.md • Join us on Discord
+
+
+
+
 License
 MIT © YOUR_REAL_NAME – see LICENSE
 
