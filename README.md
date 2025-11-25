@@ -2,14 +2,14 @@
 
 **Self-Evolving Multi-Bot Mesh Architecture**
 
-![PyPI version](https://img.shields.io/pypi/v/sherin?color=success)
-![Tests](https://github.com/YOUR_GITHUB_rafeez1819/sherin/actions/workflows/ci.yml/badge.svg)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)
+[![PyPI version](https://img.shields.io/pypi/v/sherin?color=success&style=flat-square)](https://pypi.org/project/sherin/)
+[![Tests](https://github.com/YOURUSERNAME/sherin/actions/workflows/ci.yml/badge.svg)](https://github.com/YOURUSERNAME/sherin/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 
 *Bots that coordinate through flag files. Systems that upgrade themselves.*
 
-[Quick start](#quick-start) • [url](https://sherin.tech/) • [Docker]([https://sherin.readthedocs.io](https://hub.docker.com/repository/docker/rafeez1819/sherin_ai/general)) • [Discord]((https://discord.gg/Zp8D4GNY))
+[Quick start](#quick-start) • [Sherin AI](https://sherin.tech/) • [Docker](https://hub.docker.com/repository/docker/rafeez1819/sherin_ai/general) • [Discord](https://discord.gg/Zp8D4GNY)
 
 </div>
 
@@ -66,6 +66,8 @@ Problems
 ❌ No shared mutable state (XCom is read-only).
 ❌ Requires a scheduler + a DB server.
 ❌ Designed for ETL, not autonomous agents.
+
+
 Sherin (dynamic mesh)
 Python# Sherin – bots decide their own topology
 hub = Hub("Finance")
@@ -81,8 +83,11 @@ Advantages
 ✅ Shared mutable knowledge – every bot reads/writes the same JSON.
 ✅ Zero-infra – runs on any machine, no daemon needed.
 ✅ Built-in audit & self-upgrade – the mesh learns from its own logs.
+
+
 Architecture (ASCII diagram)
-text┌───────────────────────────────────── USER REQUEST ──────────────────────────────────────┐
+text
+    ┌───────────────────────────────────── USER REQUEST ──────────────────────────────────────┐
     │  "Forecast Q4 revenue with risk & tax"                                                  │
     └───────────────────────────────────────┬─────────────────────────────────────────────────┘
                                             │
