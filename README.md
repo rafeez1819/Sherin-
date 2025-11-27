@@ -1,6 +1,6 @@
 #  *Sherin*     # Sherin OS  
 
-**       Self-Evolving Multi-Bot Mesh Architecture**
+**Self-Evolving Multi-Bot Mesh Architecture**
 **Self-Evolving Multi-Bot Mesh Architecture · 47 Days · 1 Human**![Most Hardcore Local AI System Ever Built](https://img.shields.io/badge/1st-Most_Hardcore_Local_AI_System_Ever_Built-ff33aa?style=for-the-badge&logo=fire&labelColor=000000)
 ![47 Days Solo](https://img.shields.io/badge/Built%20in-47%20Days%20Solo-ff33aa?style=for-the-badge&logo=clock&labelColor=000000)
 ![100% Local · Zero Cloud Dependency](https://img.shields.io/badge/100%25-Local-Zero_Cloud_Dependency-2d2d2d?style=for-the-badge&logo=harddrive)
