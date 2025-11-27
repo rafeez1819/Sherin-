@@ -1,21 +1,7 @@
 # 🌍  *Sherin AI*    -  *Sherin OS*  - *Sherin File System* 🌍
 
 **Self-Evolving Multi-Bot Mesh Architecture**<o> -
-**Self-Evolving Multi-Bot Mesh Architecture <o> - 47 Days <o> - 1 Human**![Most Hardcore Local AI System Ever Built](https://img.shields.io/badge/1st-Most_Hardcore_Local_AI_System_Ever_Built-ff33aa?style=for-the-badge&logo=fire&labelColor=000000) <o>
-![47 Days Solo](https://img.shields.io/badge/Built%20in-47%20Days%20Solo-ff33aa?style=for-the-badge&logo=clock&labelColor=000000) <o>
-![100% Local · Zero Cloud Dependency](https://img.shields.io/badge/100%25-Local-Zero_Cloud_Dependency-2d2d2d?style=for-the-badge&logo=harddrive) <o>
-![Runs Anywhere · No Boot · No Drivers](https://img.shields.io/badge/Runs_Anywhere-No_Boot_No_Drivers-brightgreen?style=for-the-badge&logo=python)<o> 
-![< 1 GB Total](https://img.shields.io/badge/Size-%3C_1_GB_Total-blueviolet?style=for-the-badge&logo=database)<o>
-![16 GB RAM Warrior](https://img.shields.io/badge/RAM-16GB_Warrior-ff33aa?style=for-the-badge&logo=python)<o>
-![Apocalypse-Proof Comms](https://img.shields.io/badge/Optical_Flash_·_HoloLink_·_LightPacket-crimson?style=for-the-badge&logo=wifi)<o>
-![SHFS Isolation](https://img.shields.io/badge/SHFS-Quantum_Ready_Isolation-gold?style=for-the-badge&logo=shield)<o>
-
-[![PyPI](https://img.shields.io/pypi/v/sherin?color=success&style=flat-square)](https://pypi.org/project/sherin/)<o>
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)<o>
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)<o>
-![Commits](https://img.shields.io/badge/Commits-2,847%20·%20100%25%20Solo-critical)<o>
-
-
+**Self-Evolving Multi-Bot Mesh Architecture <o> - 47 Days <o> - 1 Human**![Most Hardcore Local AI System Ever Built](https://img.shields.io/badge/1st-
 
 ![#1 Most Hardcore Local Model 2025](https://img.shields.io/badge/1st%20Place-Most%20Hardcore%20Local%20Model%202025-ff33aa?style=for-the-badge&logo=fire)
 ![100% Local](https://img.shields.io/badge/100%25-Local%20Only-2d2d2d?style=for-the-badge&logo=harddrive) 
@@ -54,6 +40,11 @@
 
 **Bots that coordinate through flag files. Systems that upgrade themselves.  
 World’s first post-singularity artifact that fits on a USB stick.**
+[![PyPI](https://img.shields.io/pypi/v/sherin?color=success&style=flat-square)](https://pypi.org/project/sherin/)<o>
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)<o>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)<o>
+![Commits](https://img.shields.io/badge/Commits-2,847%20·%20100%25%20Solo-critical)<o>
+
 
 [Website](https://sherin.tech) • [Source + PDF (416 pages)](https://sherin-os.captain) • [IPFS Permanent](https://ipfs.io/ipfs/Qm…) • [Magnet Torrent](magnet:?) • [Docker](https://hub.docker.com/r/rafeez1819/sherin_ai) • [Discord](https://discord.gg/Zp8D4GNY)
 
